@@ -31,6 +31,7 @@ module.exports = {
                 throw new UserInputError('Errors', { errors })
             }
             const userEmail = await User.findOne({ email })
+
             if (!userEmail) {
                 errors.general = 'Email not found'
                 throw new UserInputError('Email not found', { errors })
