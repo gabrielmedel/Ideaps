@@ -1,7 +1,6 @@
 const { model, Schema } = require('mongoose')
 
 const postSchema = new Schema({
-    userImage: String,
     username: String,
     createdAt: String,
     title: String,
@@ -25,11 +24,7 @@ const postSchema = new Schema({
             createdAt: String,
         },
     ],
-    interactions: [
-        {
-            username: String,
-        },
-    ],
+    interactionsCount: Number,
     saves: [
         {
             username: String,

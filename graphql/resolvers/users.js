@@ -12,8 +12,9 @@ const generateToken = (email) => {
     return jwt.sign(
         {
             id: email.id,
-            email: email.email,
+            userImage: email.userImage,
             username: email.username,
+            role: 'user',
         },
         process.env.SECRET_JWT,
         {
