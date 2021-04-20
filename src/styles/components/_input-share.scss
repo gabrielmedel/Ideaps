@@ -1,0 +1,22 @@
+.input-share {
+  outline: none;
+  border-radius: $borderRadius + 0.2em;
+  background: $background;
+  border: 0.09em solid $medium;
+  margin: 0;
+  width: 100%;
+  padding: 0.6em;
+  font-weight: 500;
+  font-size: 0.95em;
+  color: $textColor;
+  &:hover {
+    border-color: $normalColor;
+  }
+  &:focus {
+    border-color: $primaryColor;
+    stroke: blue !important;
+  }
+  &::placeholder {
+    color: $normalColor;
+  }
+}

@@ -1,0 +1,18 @@
+:root {
+  --primaryColor: #105cff;
+}
+
+$primaryColor: var(--primaryColor);
+$color: #111111;
+$textColor: #646464;
+$normalColor: #d0d0d0;
+$surface: #f4f4f4;
+$medium: #e1e1e1;
+$post: #f9f9f9;
+$feble: #fbfbfb;
+$background: #ffffff;
+$borderRadius: 0.2em;
+
+:export {
+  primaryColor: $primaryColor;
+}

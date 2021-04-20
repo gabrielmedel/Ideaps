@@ -1,0 +1,18 @@
+.add-idea-wrapper {
+  @include flex(center, center, column);
+}
+
+.add-idea-container {
+  width: 50%;
+  margin: 0;
+  padding: 3em 1em 3em 1em;
+  @include flex(flex-start, center, column);
+}
+
+@media (max-width: 600px) {
+  .add-idea-container {
+    width: 80%;
+  }
+}
+
+@import "../../styles/components/input-share";

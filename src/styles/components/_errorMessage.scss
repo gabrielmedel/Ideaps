@@ -1,0 +1,23 @@
+.error-message {
+  display: flex;
+  line-height: 2em;
+  align-items: flex-start;
+  color: rgb(248, 112, 112) !important;
+  margin: 1em 0em 1em 0em !important;
+  height: 80% !important;
+}
+
+.alertIcon {
+  stroke: rgb(248, 112, 112) !important;
+  width: 1em !important;
+  margin-right: 0.5em;
+}
+
+#errorInputPassword {
+  border-color: red;
+}
+
+#validInputPassword {
+  color: $textColor;
+  border-color: $normalColor;
+}

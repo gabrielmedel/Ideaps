@@ -1,0 +1,82 @@
+@mixin primaryButton($size, $width) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.2em;
+  color: $surface;
+  padding: 0.8em;
+  background: $primaryColor;
+  width: 5em * $size + $width;
+  height: 0.8em * $size;
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    background: $primaryColor;
+  }
+}
+
+@mixin secondaryButton($size, $width) {
+  color: $color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8em;
+  border-radius: 0.2em;
+  background: transparent;
+  border: 0.09em solid $normalColor;
+  width: 4.86em * $size + $width;
+  height: 0.65em * $size;
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    background: $feble;
+  }
+}
+
+@mixin submitButton($size, $width) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $borderRadius + 0.2em;
+  color: $surface;
+  padding: 0.8em;
+  background: $primaryColor;
+  width: 5em * $size + $width;
+
+  text-align: center;
+  cursor: pointer;
+}
+
+@mixin container($width: 1, $bg: transparent, $radius: 0) {
+  background: $bg;
+  text-align: left;
+  padding: 1em;
+  width: 20% * $width;
+  border-radius: $radius;
+}
+
+@mixin fullPage($position: absolute) {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin flex($x: center, $y: center, $direction: column) {
+  display: flex;
+  justify-content: $x;
+  align-items: $y;
+  flex-direction: $direction;
+}
+
+@mixin icon($size: 0.1em, $color: $normalColor, $background: transparent) {
+  width: $size * 1em;
+  height: $size * 1em;
+  path {
+    stroke: $color;
+    fill: $background;
+  }
+}
+
+@mixin bigThing {
+  background: radial-gradient(82.56% 82.56% at 16.28% 17.44%, #3c0bff 0%, #608cff 100%);
+}

@@ -1,0 +1,27 @@
+@import "../components/post";
+
+.masonry-wrapper {
+  padding: 2em;
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+}
+.masonry {
+  width: 95%;
+  columns: 1;
+  column-gap: 3em;
+  padding: 2em;
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  .masonry {
+    columns: 2;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .masonry {
+    columns: 2;
+  }
+}

@@ -1,0 +1,117 @@
+@font-face {
+  font-family: ProductSansMedium;
+  src: url("./utils/fonts/ProductSansMedium.ttf");
+}
+
+@font-face {
+  font-family: ProductSansRegular;
+  src: url("./utils/fonts/ProductSansRegular.ttf");
+}
+
+@font-face {
+  font-family: ProductSansBlack;
+  src: url("./utils/fonts/ProductSansBlack.ttf");
+}
+
+@font-face {
+  font-family: ProductSansBold;
+  src: url("./utils/fonts/ProductSansBold.ttf");
+}
+
+
+@mixin blackFont {
+  font-family: ProductSansBlack;
+}
+
+@mixin boldFont {
+  font-family: ProductSansBold;
+}
+
+@mixin mediumFont {
+  font-family: ProductSansMedium;
+}
+
+@mixin regularFont {
+  font-family: ProductSansMedium;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @include mediumFont();
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.04em;
+}
+
+h1 {
+  @include blackFont();
+  font-weight: 900;
+  font-style: normal;
+  letter-spacing: 0.01em;
+  font-size: 4em;
+}
+
+h2 {
+  @include boldFont();
+  font-weight: 900;
+  font-style: normal;
+  letter-spacing: 0.01em;
+  font-size: 3em;
+}
+
+h3 {
+  @include boldFont();
+  font-weight: 900;
+  font-style: normal;
+  letter-spacing: 0.01em;
+  font-size: 2em;
+}
+
+h4 {
+  @include boldFont();
+  font-weight: 900;
+  font-style: normal;
+  letter-spacing: 0.01em;
+  font-size: 1.5em;
+}
+
+p {
+  @include mediumFont();
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 0.04em;
+  font-size: 0.9em;
+}
+
+span {
+  @include mediumFont();
+  font-weight: 580;
+  font-style: normal;
+  letter-spacing: 0.04em;
+  font-size: 1em;
+}
+
+input {
+  @include mediumFont();
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 0.04em;
+  font-size: 0.9em;
+}
+
+li {
+  @include mediumFont();
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.06em;
+  font-size: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

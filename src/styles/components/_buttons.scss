@@ -1,0 +1,7 @@
+.primaryButton {
+  @include primaryButton(1, 0);
+}
+
+.secondaryButton {
+  @include secondaryButton(1, 0);
+}

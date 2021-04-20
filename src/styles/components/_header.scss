@@ -1,0 +1,148 @@
+@import "./arrowBox";
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 3.8em;
+  z-index: 99;
+}
+.header-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 3.8em;
+  background: $background;
+  border-bottom: 0.07em solid $normalColor;
+  display: flex;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+  .logo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    a {
+      margin-left: 10%;
+    }
+  }
+  .nav {
+    margin: auto;
+    height: 100%;
+    display: flex;
+    width: 100%;
+    min-width: none;
+    align-items: center;
+    justify-content: space-around;
+    align-items: center;
+    color: $normalColor;
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 39%;
+      min-width: 12em;
+      height: 95%;
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        cursor: pointer;
+      }
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+        border: 0.13em solid transparent;
+      }
+      a:hover {
+        border-bottom: 0.13em solid $primaryColor;
+      }
+      .activeNav {
+        border-bottom: 0.13em solid $primaryColor;
+      }
+      .dropdown {
+        position: absolute;
+        width: 12em;
+        top: 3.5em;
+        height: auto;
+      }
+    }
+
+    .miniLine {
+      margin-left: 1em;
+      margin-right: 1.2em;
+      min-width: 0.09em;
+      background: $normalColor;
+      height: 35%;
+    }
+
+    .navMore {
+      height: 100%;
+      display: flex;
+    }
+    .user {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 40%;
+      min-width: 14em;
+      max-width: 16em;
+      height: 100%;
+    }
+  }
+
+  .dropdown {
+    position: absolute;
+    width: 12em;
+    top: 3.5em;
+    height: auto;
+  }
+
+  .miniLine {
+    margin-left: 1em;
+    margin-right: 1.2em;
+    min-width: 0.09em;
+    background: $normalColor;
+    height: 35%;
+  }
+  .loged-user {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #000;
+    width: 100%;
+  }
+
+  .navMore {
+    height: 100%;
+    display: flex;
+  }
+
+  .user-loged {
+    width: 100%;
+    min-width: 11em !important;
+    width: 10% !important;
+    justify-content: space-around !important;
+    .navMore {
+      height: 100%;
+      display: flex;
+    }
+  }
+
+  .profile {
+    width: 100%;
+    white-space: nowrap;
+    height: 0.6em !important;
+    padding: 0.7em 1.5em 0.7em 1.5em;
+    p {
+      color: $normalColor;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+body {
+  background-color: $background;
+  color: $textColor;
+}
+
+.App {
+  @include boldFont;
+  text-align: center;
+}
+
+.white-space {
+  height: 1.2em;
+}

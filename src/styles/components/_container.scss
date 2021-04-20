@@ -1,0 +1,23 @@
+.container {
+  @include container(1.3, $surface, 0.2em);
+  @include flex(center, left);
+}
+
+.centered {
+  width: 100%;
+  height: 100%;
+  @include flex(center, center);
+}
+
+.fullPage {
+  position: absolute;
+  width: 100%;
+  height: 75%;
+
+  @include flex(center, center);
+}
+
+.arrowDown {
+  margin-top: 0.11em;
+  @include icon(0.6, $normalColor);
+}

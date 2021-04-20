@@ -1,0 +1,29 @@
+.masonry-item {
+  border-radius: $borderRadius + 0.2em;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 2.7em;
+  width: 100%;
+  height: auto;
+  background: $post;
+}
+
+.masonry-item h3 {
+  font-size: 1.7em;
+  margin: 0.5em 0em 0.5em 0em;
+}
+
+.masonry-item p {
+  width: 100%;
+  height: 3.4em;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /*white-space: nowrap; */
+  position: relative;
+  z-index: 0;
+}
+
+.post-wrapper {
+  padding: 1em 1.9em 1.9em 1.9em;
+}
