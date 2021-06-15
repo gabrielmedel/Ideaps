@@ -43,7 +43,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 39%;
+      width: 42%;
       min-width: 12em;
       height: 95%;
       div {
@@ -137,10 +137,12 @@
   }
 
   .profile {
-    width: 100%;
+    width: 10em !important;
+    width: clamp(6em, 10em, 140%);
     white-space: nowrap;
-    height: 0.6em !important;
-    padding: 0.7em 1.5em 0.7em 1.5em;
+    height: 0.4em !important;
+
+    font-size: 0.95em;
     p {
       color: $normalColor;
     }

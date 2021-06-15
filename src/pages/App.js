@@ -1,5 +1,5 @@
 import "../styles/index.css"
-import { Apollo } from "../ApolloProvider"
+import Apollo from "../ApolloProvider"
 import { AuthProvider } from "../context/auth"
 import { Explore } from "./Explore"
 import { Switch, Route, useLocation } from "react-router-dom"
@@ -10,12 +10,16 @@ import { Login } from "./Login"
 import { Register } from "./Register"
 import { Home } from "./Home"
 import ScrollMemory from "react-router-scroll-memory"
+
 import { AuthRoutes } from "../components/AuthRoutes"
+import { ApolloProvider } from "@apollo/client"
 
 function App() {
   let location = useLocation()
   let background = location.state && location.state.background
-
+  Switch.displayName = "Ideaps"
+  Apollo.displayName = "Ideaps"
+  ApolloProvider.displayName = "AppConsumer"
   return (
     <AuthProvider>
       <Apollo>
@@ -23,10 +27,7 @@ function App() {
 
         <Switch location={background || location}>
           <Route path="/explore">
-            <div>
-              <ScrollMemory />
-              <Explore></Explore>
-            </div>
+            <Explore></Explore>
           </Route>
 
           <ProtectedRoute path="/share" component={Share} />

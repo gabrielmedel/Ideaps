@@ -5,6 +5,7 @@ import reportWebVitals from "./reportWebVitals"
 import { BrowserRouter as Router } from "react-router-dom"
 import App from "./pages/App"
 import ScrollMemory from "react-router-scroll-memory"
+Router.displayName = "AppWrapper"
 
 ReactDOM.render(
   <React.StrictMode>

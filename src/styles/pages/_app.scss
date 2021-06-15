@@ -4,10 +4,30 @@ body {
 }
 
 .App {
-  @include boldFont;
+  @include regularFont();
   text-align: center;
+}
+
+.filepond--credits {
+  display: none !important;
 }
 
 .white-space {
   height: 1.2em;
+}
+
+.white-space-2 {
+  height: 1.6em;
+}
+
+.white-space-3 {
+  height: 2em;
+}
+
+.white-space-4 {
+  height: 2.4em;
+}
+
+.white-space-5 {
+  height: 4em;
 }

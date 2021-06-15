@@ -2,17 +2,137 @@
   @include flex(center, center, column);
 }
 
-.add-idea-container {
-  width: 50%;
+.share-introduction {
+  width: 70%;
   margin: 0;
-  padding: 3em 1em 3em 1em;
-  @include flex(flex-start, center, column);
+  padding: 1em 1em 1em 1em;
+  @include flex(flex-start, flex-start, column);
+  h2,
+  span {
+    margin-bottom: 0.5em;
+    width: 90%;
+  }
+}
+
+.add-idea-container {
+  width: 70%;
+  margin: 0;
+  padding: 1em 1em 10em 1em;
+  @include flex(flex-start, flex-start, column);
+}
+
+.submit-wrapper {
+  position: fixed;
+  z-index: 99;
+  bottom: 0;
+  left: 0;
+  border-top: 0.07em solid $normalColor;
+  height: 5em;
+  width: 100%;
+  background: $background;
+  @include flex(center, center, column);
+}
+
+.submit-container {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.idea-title {
+  width: 35%;
+}
+
+.title-tags-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+
+.tags-container {
+  margin-left: 1em;
+  width: 65%;
+}
+
+.css-yk16xz-control {
+  outline: none !important;
+  border-radius: $borderRadius + 0.2em !important;
+  background: $background !important;
+  border: 0.09em solid $medium !important;
+  margin-top: -0.25em !important;
+  font-weight: 500 !important;
+  font-size: 0.95em !important;
+  color: $textColor !important;
+  &:hover {
+    border-color: $normalColor !important;
+  }
+  &:focus {
+    border-color: $primaryColor !important;
+    stroke: blue !important;
+  }
+  &::placeholder {
+    color: $normalColor !important;
+  }
+}
+
+.input-tag {
+  box-sizing: border-box;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.idea-link {
+  width: 100%;
+}
+
+.filepond--wrapper {
+  width: 100% !important;
 }
 
 @media (max-width: 600px) {
-  .add-idea-container {
+  .add-idea-container,
+  .share-introduction {
+    width: 80%;
+  }
+
+  .share-introduction {
+    h2,
+    span {
+      margin-bottom: 0.5em;
+      width: 100%;
+    }
+  }
+
+  .title-tags-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .idea-title {
+    width: 100%;
+  }
+
+  .tags-container {
+    margin-left: 0em;
+    margin-top: 4em;
+    width: 100%;
+  }
+
+  .submit-wrapper {
+    height: 4em;
+  }
+
+  .submit-container {
     width: 80%;
   }
 }
 
 @import "../../styles/components/input-share";
+@import "../../styles/components/textArea";
+@import "../../styles/components/infoTooltip";

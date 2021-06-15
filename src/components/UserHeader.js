@@ -11,14 +11,8 @@ export const UserHeader = () => {
   const logedUser = useRef(null)
   const wrapper = useRef(null)
 
-  function handleShowOutside() {
-    console.log("pe")
-    show ? setShow(false) : setShow(true)
-  }
-
   function handleShow(e) {
-    show ? setShow(false) : setShow(true)
-    document.addEventListener("click", handleShowOutside)
+    !show ? setShow(true) : setShow(false)
   }
 
   const menuBar = user ? (
@@ -34,10 +28,10 @@ export const UserHeader = () => {
           minWidth: "1em !important",
         }}
         className="navMore"
-        ref={logedUser}
-        onClick={handleShow}>
-        <div style={{ width: "8em" }} className="secondaryButton profile">
-          <p>{user.username}</p> &nbsp; <ArrowDown className="arrowDown" />
+        ref={logedUser}>
+        <div onClick={handleShow} style={{ width: "8em" }} className="secondaryButton profile">
+          <p>{user.username}</p> &nbsp;
+          <ArrowDown className="arrowDown" />
         </div>
 
         <TriangleBoxUser referent={wrapper} show={show} logout={logout} />
@@ -56,7 +50,10 @@ export const UserHeader = () => {
       <Link
         to={{
           pathname: `/register`,
-          state: { background: location },
+          state: {
+            background: location,
+            position: window.pageYOffset,
+          },
         }}
         className="primaryButton">
         <p>Sign up</p>

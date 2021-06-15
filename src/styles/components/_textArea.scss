@@ -1,10 +1,21 @@
-.input-share {
+.text-area-component-wrapper {
+  width: 100%;
+}
+
+.text-area-component {
+  width: 100%;
+  resize: none;
+  min-height: 7em;
+}
+
+.input-share-text-area {
+  box-sizing: border-box;
   outline: none;
   border-radius: $borderRadius + 0.2em;
   background: $background;
   border: 0.09em solid $medium;
   margin: 0;
-  padding: 0.6em;
+  padding: 0.6em 0.6em;
   font-weight: 500;
   font-size: 0.95em;
   color: $textColor;
@@ -18,15 +29,4 @@
   &::placeholder {
     color: $normalColor;
   }
-}
-
-.input-component {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.label-info {
-  display: flex;
-  margin: 0;
 }

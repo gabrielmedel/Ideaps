@@ -43,7 +43,9 @@ export const Login = props => {
       history.goBack()
     },
     onError(err) {
-      setserverErrors(err.graphQLErrors[0].extensions.exception.errors)
+      setserverErrors(
+        err && err.graphQLErrors[0] ? err.graphQLErrors[0].extensions.exception.errors : {}
+      )
     },
     variables: formValues,
   })

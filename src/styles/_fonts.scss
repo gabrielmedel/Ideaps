@@ -18,7 +18,6 @@
   src: url("./utils/fonts/ProductSansBold.ttf");
 }
 
-
 @mixin blackFont {
   font-family: ProductSansBlack;
 }
@@ -96,6 +95,14 @@ span {
 }
 
 input {
+  @include mediumFont();
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 0.04em;
+  font-size: 0.9em;
+}
+
+textarea {
   @include mediumFont();
   font-weight: 500;
   font-style: normal;
