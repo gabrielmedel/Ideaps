@@ -87,6 +87,33 @@ module.exports = {
             }
         },
 
+        async interact(_, { postId }, context) {
+            const { username } = checkAuth(context)
+
+            const post = await Post.findById(postId)
+
+            if (post) {
+                if (
+                    post.interactions.find(
+                        (interactions) => interactions.username === username
+                    )
+                ) {
+                    //Already collaborating
+                } else {
+                    //not collaborating
+                    post.interactions.push({
+                        username,
+                    })
+                }
+
+                await post.save()
+
+                return post
+            } else {
+                throw new UserInputError('Post not found')
+            }
+        },
+
         async save(_, { postId }, context) {
             const { username, id } = checkAuth(context)
 
@@ -95,7 +122,6 @@ module.exports = {
             if (post) {
                 if (post.saves.find((save) => save.username === username)) {
                     //Already saved
-
                     post.saves = post.saves.filter(
                         (save) => save.username !== username
                     )

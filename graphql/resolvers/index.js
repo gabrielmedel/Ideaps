@@ -11,7 +11,8 @@ module.exports = {
             const count =
                 parent.collaborations.length +
                 parent.comments.length +
-                parent.saves.length
+                parent.saves.length +
+                parent.interactions.length
             return count
         },
     },

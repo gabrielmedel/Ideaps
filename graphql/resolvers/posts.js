@@ -39,6 +39,10 @@ module.exports = {
                 throw new Error('Your idea has to have a description')
             }
 
+            if (categories[0] === '') {
+                throw new Error('Your idea has to have at least one category')
+            }
+
             const newPost = new Post({
                 username: user.username,
                 title: title,

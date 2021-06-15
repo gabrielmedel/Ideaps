@@ -1,6 +1,7 @@
 const User = require('../../models/User')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+const checkAuth = require('../../util/check-auth')
 require('dotenv').config()
 const { UserInputError } = require('apollo-server')
 const {
@@ -18,7 +19,7 @@ const generateToken = (email) => {
         },
         process.env.SECRET_JWT,
         {
-            expiresIn: '1h',
+            expiresIn: '15m',
         }
     )
 }
@@ -39,7 +40,7 @@ module.exports = {
             } else {
                 const match = await bcrypt.compare(password, userEmail.password)
                 if (!match) {
-                    errors.general = 'Wrong credentials'
+                    errors.general = 'Email or password are incorrect'
                     throw new UserInputError('Wrong credentials', { errors })
                 }
             }
@@ -53,15 +54,11 @@ module.exports = {
             }
         },
 
-        async register(
-            _,
-            { registerInput: { username, email, password, confirmPassword } }
-        ) {
+        async register(_, { registerInput: { username, email, password } }) {
             const { valid, errors } = validateRegisterInput(
                 username,
                 email,
-                password,
-                confirmPassword
+                password
             )
 
             if (!valid) {
@@ -70,17 +67,17 @@ module.exports = {
 
             const user = await User.findOne({ username })
             if (user) {
-                throw new UserInputError('Username is taken', {
+                throw new UserInputError('Username is already taken', {
                     errors: {
-                        username: 'This username is taken',
+                        username: 'Username is already taken',
                     },
                 })
             }
             const userEmail = await User.findOne({ email })
             if (userEmail) {
-                throw new UserInputError('email is taken', {
+                throw new UserInputError('Email is already taken', {
                     errors: {
-                        email: 'This email is taken',
+                        email: 'Email is already taken',
                     },
                 })
             }

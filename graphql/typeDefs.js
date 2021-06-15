@@ -13,6 +13,7 @@ module.exports = gql`
         comments: [Comments]
         saves: [Saves]
         collaborations: [Collaborations]
+        interactions: [Interactions]
         collaborationsCount: Int
         interactionsCount: Int
     }
@@ -28,6 +29,10 @@ module.exports = gql`
         createdAt: String!
         username: String!
         body: String!
+    }
+
+    type Interactions {
+        username: String!
     }
 
     type Collaborations {
@@ -48,7 +53,6 @@ module.exports = gql`
     input RegisterInput {
         username: String!
         password: String!
-        confirmPassword: String!
         email: String!
     }
 
@@ -78,8 +82,8 @@ module.exports = gql`
 
         createComment(postId: String!, body: String!): Post!
         deleteComment(postId: ID!, commentId: ID!): String
-
         collaborate(postId: ID!): Post!
+        interact(postId: ID!): Post!
         save(postId: ID!): Post!
     }
 `

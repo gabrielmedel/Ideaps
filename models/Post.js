@@ -24,11 +24,15 @@ const postSchema = new Schema({
             createdAt: String,
         },
     ],
+    interactions: [
+        {
+            username: String,
+        },
+    ],
     interactionsCount: Number,
     saves: [
         {
             username: String,
-            createdAt: String,
         },
     ],
 
